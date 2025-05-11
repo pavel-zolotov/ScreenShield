@@ -74,7 +74,7 @@ extension UIView {
     }
     
     func setScreenCaptureProtection() {
-        if viewWithTag(Constants.secureTextFieldTag) is UITextField {
+        /*if viewWithTag(Constants.secureTextFieldTag) is UITextField {
             return
         }
         
@@ -83,7 +83,7 @@ extension UIView {
                 subview.setScreenCaptureProtection()
             }
             return
-        }
+        }*/
         
         let secureTextField = UITextField()
         secureTextField.backgroundColor = .clear
@@ -98,10 +98,10 @@ extension UIView {
         layer.superlayer?.addSublayer(secureTextField.layer)
         secureTextField.layer.sublayers?.last?.addSublayer(layer)
         
-        secureTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        /*secureTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         secureTextField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
         secureTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
-        secureTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
+        secureTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true*/
 #else
         secureTextField.frame = bounds
         secureTextField.wantsLayer = true
